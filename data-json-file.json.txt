@@ -1,0 +1,212 @@
+{
+  "EMB-135_WITH_REVERSER_CAT1_FLAP_22_WITHOUT_ICE": {
+    "rwycc": {
+      "6": {
+        "ref_distance": 1068,
+        "corrections": {
+          "weight_below": -46,
+          "weight_above": 47,
+          "altitude": 29,
+          "temp_below_isa": 11,
+          "temp_above_isa": 23,
+          "headwind": 23,
+          "tailwind": 107,
+          "uphill": 7,
+          "downhill": 170,
+          "vref_additive": 114,
+          "reverser_inop": 129
+        }
+      },
+      "5": {
+        "ref_distance": 1239,
+        "corrections": {
+          "weight_below": -57,
+          "weight_above": 59,
+          "altitude": 41,
+          "temp_below_isa": 15,
+          "temp_above_isa": 37,
+          "headwind": 29,
+          "tailwind": 160,
+          "uphill": 11,
+          "downhill": 209,
+          "vref_additive": 136,
+          "reverser_inop": 515
+        }
+      },
+      "4": {
+        "ref_distance": 1357,
+        "corrections": {
+          "weight_below": -58,
+          "weight_above": 59,
+          "altitude": 41,
+          "temp_below_isa": 15,
+          "temp_above_isa": 35,
+          "headwind": 31,
+          "tailwind": 143,
+          "uphill": 16,
+          "downhill": 214,
+          "vref_additive": 120,
+          "reverser_inop": 515
+        }
+      },
+      "3": {
+        "ref_distance": 1446,
+        "corrections": {
+          "weight_below": -63,
+          "weight_above": 64,
+          "altitude": 45,
+          "temp_below_isa": 16,
+          "temp_above_isa": 40,
+          "headwind": 34,
+          "tailwind": 161,
+          "uphill": 19,
+          "downhill": 238,
+          "vref_additive": 126,
+          "reverser_inop": 606
+        }
+      },
+      "2": {
+        "ref_distance": 1575,
+        "corrections": {
+          "weight_below": -76,
+          "weight_above": 79,
+          "altitude": 58,
+          "temp_below_isa": 19,
+          "temp_above_isa": 59,
+          "headwind": 39,
+          "tailwind": 237,
+          "uphill": 24,
+          "downhill": 317,
+          "vref_additive": 143,
+          "reverser_inop": 1039
+        }
+      },
+      "1": {
+        "ref_distance": 1721,
+        "corrections": {
+          "weight_below": -81,
+          "weight_above": 83,
+          "altitude": 61,
+          "temp_below_isa": 19,
+          "temp_above_isa": 59,
+          "headwind": 43,
+          "tailwind": 228,
+          "uphill": 32,
+          "downhill": 362,
+          "vref_additive": 138,
+          "reverser_inop": 1425
+        }
+      }
+    },
+    "overweight_correction": 172
+  },
+  "EMB-135_WITH_REVERSER_CAT1_FLAP_22_WITH_ICE": {
+    "rwycc": {
+      "6": {
+        "ref_distance": 1145,
+        "corrections": {
+          "weight_below": -49,
+          "weight_above": 51,
+          "altitude": 32,
+          "temp_below_isa": 12,
+          "temp_above_isa": 26,
+          "headwind": 23,
+          "tailwind": 111,
+          "uphill": 8,
+          "downhill": 179,
+          "vref_additive": 103,
+          "reverser_inop": 134
+        }
+      },
+      "5": {
+        "ref_distance": 1330,
+        "corrections": {
+          "weight_below": -62,
+          "weight_above": 63,
+          "altitude": 45,
+          "temp_below_isa": 16,
+          "temp_above_isa": 40,
+          "headwind": 30,
+          "tailwind": 165,
+          "uphill": 12,
+          "downhill": 219,
+          "vref_additive": 115,
+          "reverser_inop": 516
+        }
+      },
+      "4": {
+        "ref_distance": 1443,
+        "corrections": {
+          "weight_below": -62,
+          "weight_above": 62,
+          "altitude": 43,
+          "temp_below_isa": 16,
+          "temp_above_isa": 38,
+          "headwind": 32,
+          "tailwind": 148,
+          "uphill": 17,
+          "downhill": 222,
+          "vref_additive": 105,
+          "reverser_inop": 504
+        }
+      },
+      "3": {
+        "ref_distance": 1534,
+        "corrections": {
+          "weight_below": -67,
+          "weight_above": 68,
+          "altitude": 48,
+          "temp_below_isa": 17,
+          "temp_above_isa": 43,
+          "headwind": 34,
+          "tailwind": 165,
+          "uphill": 20,
+          "downhill": 248,
+          "vref_additive": 106,
+          "reverser_inop": 611
+        }
+      },
+      "2": {
+        "ref_distance": 1669,
+        "corrections": {
+          "weight_below": -80,
+          "weight_above": 82,
+          "altitude": 62,
+          "temp_below_isa": 20,
+          "temp_above_isa": 63,
+          "headwind": 40,
+          "tailwind": 241,
+          "uphill": 24,
+          "downhill": 327,
+          "vref_additive": 117,
+          "reverser_inop": 1065
+        }
+      },
+      "1": {
+        "ref_distance": 1813,
+        "corrections": {
+          "weight_below": -86,
+          "weight_above": 87,
+          "altitude": 64,
+          "temp_below_isa": 20,
+          "temp_above_isa": 63,
+          "headwind": 44,
+          "tailwind": 233,
+          "uphill": 32,
+          "downhill": 371,
+          "vref_additive": 114,
+          "reverser_inop": 1400
+        }
+      }
+    },
+    "overweight_correction": 176
+  },
+  "EMB-135_WITH_REVERSER_CAT1_FLAP_45_WITHOUT_ICE": {
+    "rwycc": {
+      "6": {
+        "ref_distance": 1009,
+        "corrections": {
+          "weight_below": -40,
+          "weight_above": 41,
+          "altitude": 27,
+          "temp
