@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMB-135/145 Landing Distance Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1e40af">
+    <link rel="icon" type="image/png" href="icon.png">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛬 EMB-135/145 Landing Distance Calculator</h1>
+            <p>Calculateur de distance d'atterrissage selon le format GRF</p>
+        </header>
+
+        <main>
+            <form id="landing-form">
+                <div class="form-section">
+                    <h2>Configuration de l'avion</h2>
+                    <div class="form-group">
+                        <label for="aircraft-model">Modèle d'avion:</label>
+                        <select id="aircraft-model" required>
+                            <option value="">Sélectionner un modèle</option>
+                            <option value="EMB-135">EMB-135</option>
+                            <option value="EMB-145">EMB-145</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="thrust-reverser">Inverseurs de poussée:</label>
+                        <select id="thrust-reverser" required>
+                            <option value="">Sélectionner</option>
+                            <option value="with">Avec inverseurs</option>
+                            <option value="without">Sans inverseurs</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="flap-setting">Configuration des volets:</label>
+                        <select id="flap-setting" required>
+                            <option value="">Sélectionner</option>
+                            <option value="22">Flap 22</option>
+                            <option value="45">Flap 45</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ice-condition">Conditions de givrage:</label>
+                        <select id="ice-condition" required>
+                            <option value="">Sélectionner</option>
+                            <option value="without">Sans givrage</option>
+                            <option value="with">Avec givrage</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cat-approach">Type d'approche:</label>
+                        <select id="cat-approach" required>
+                            <option value="">Sélectionner</option>
+                            <option value="CAT1">CAT I</option>
+                            <option value="CAT2">CAT II</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Conditions de piste</h2>
+                    <div class="form-group">
+                        <label for="rwycc">Code de condition de piste (RWYCC):</label>
+                        <select id="rwycc" required>
+                            <option value="">Sélectionner RWYCC</option>
+                            <option value="6">6 - Sèche</option>
+                            <option value="5">5 - Bonne (givre, mouillée, neige/slush ≤3mm)</option>
+                            <option value="4">4 - Bonne à moyenne (neige tassée &lt;-15°C)</option>
+                            <option value="3">3 - Moyenne (mouillée glissante, neige &gt;3mm)</option>
+                            <option value="2">2 - Moyenne à faible (eau/slush &gt;3mm)</option>
+                            <option value="1">1 - Faible (glace)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Paramètres de vol</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="landing-weight">Masse à l'atterrissage (kg):</label>
+                            <input type="number" id="landing-weight" min="12000" max="22000" step="100" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="pressure-altitude">Altitude pression (ft):</label>
+                            <input type="number" id="pressure-altitude" step="100" value="0" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="temperature">Température (°C par rapport à ISA):</label>
+                            <input type="number" id="temperature" step="1" value="0" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="wind-speed">Vent (kt):</label>
+                            <input type="number" id="wind-speed" step="1" value="0" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="wind-direction">Direction du vent:</label>
+                            <select id="wind-direction" required>
+                                <option value="headwind">Vent de face</option>
+                                <option value="tailwind">Vent arrière</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="runway-slope">Pente de piste (%):</label>
+                            <input type="number" id="runway-slope" step="0.1" value="0" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="slope-direction">Direction de la pente:</label>
+                            <select id="slope-direction" required>
+                                <option value="uphill">Montante</option>
+                                <option value="downhill">Descendante</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="vref-additive">Vitesse au-dessus de VREF (kt):</label>
+                            <input type="number" id="vref-additive" min="0" max="20" step="1" value="0" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="reverser-inop-group" style="display: none;">
+                        <label for="reverser-inop">Inverseurs inopérants:</label>
+                        <input type="number" id="reverser-inop" min="0" max="2" step="1" value="0">
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit">Calculer la distance d'atterrissage</button>
+                    <button type="reset">Réinitialiser</button>
+                </div>
+            </form>
+
+            <div id="results" class="results" style="display: none;">
+                <h2>Résultats</h2>
+                <div class="result-card">
+                    <div class="result-main">
+                        <span class="result-label">Distance d'atterrissage requise:</span>
+                        <span id="final-distance" class="result-value">0 m</span>
+                    </div>
+                    <div class="calculation-details">
+                        <h3>Détail des calculs:</h3>
+                        <div id="calculation-steps"></div>
+                    </div>
+                </div>
+                
+                <div class="warnings">
+                    <p><strong>⚠️ Avertissements importants:</strong></p>
+                    <ul>
+                        <li>Ces données ne considèrent aucun facteur multiplicateur ni marge de sécurité additionnelle</li>
+                        <li>Ne pas utiliser pour les procédures d'urgence/anormales</li>
+                        <li>Les réglementations opérationnelles locales peuvent exiger des facteurs multiplicateurs additionnels</li>
+                        <li>Cette application n'est pas approuvée pour utilisation opérationnelle</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Basé sur le document Embraer GP-7924 - Global Reporting Format</p>
+            <p>Version: 1.0 | <span id="install-status">Application installable</span></p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // Service Worker registration
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(registration => console.log('SW registered'))
+                .catch(error => console.log('SW registration failed'));
+        }
+    </script>
+</body>
+</html>
